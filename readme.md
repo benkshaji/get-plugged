@@ -10,3 +10,5 @@
 2. yarn dev
 3. cd server
 4. yarn dev
+
+### run `yarn vercel-build` in server before pushing the code if there are any changes in server folder
