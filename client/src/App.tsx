@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     axiosClient
-      .get("http://localhost:8080")
+      .get("/message")
       .then((response) => {
         setData(response.data.message);
         setLoading(false);
