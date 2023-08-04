@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { axiosClient } from "./lib/axios";
 
 function App() {
   const [data, setData] = useState(null);
@@ -9,17 +10,10 @@ function App() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080")
+    axiosClient
+      .get("http://localhost:8080")
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-
-        setData(data.message);
+        setData(response.data.message);
         setLoading(false);
       })
       .catch((error) => {
