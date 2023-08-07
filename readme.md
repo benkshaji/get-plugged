@@ -38,10 +38,4 @@
    yarn dev
    ```
 
-1. Or to run server and client concurrently
-
-   ```sh
-   yarn run dev
-   ```
-
 ### run `yarn vercel-build` in server before pushing the code if there are any changes in server folder
